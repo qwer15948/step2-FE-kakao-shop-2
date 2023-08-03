@@ -10,21 +10,20 @@ const HomePage = () => {
   const carouselItems = [
     {
       id: 1,
-      src: "carouselItem1.jpeg",
+      src: "/carouselItem1.jpeg",
       alt: "메인 배너",
     },
     {
       id: 2,
-      src: "carouselItem2.jpeg",
+      src: "/carouselItem2.jpeg",
       alt: "메인 배너",
     },
     {
       id: 3,
-      src: "carouselItem3.jpeg",
+      src: "/carouselItem3.jpeg",
       alt: "메인 배너",
     },
   ];
-
   return (
     <div className="home-page">
       <section className="main-banner min-w-[1024px]">

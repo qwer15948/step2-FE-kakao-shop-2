@@ -4,7 +4,7 @@ import { getCookie } from "../storage/Cookie";
 const staticServerUri = process.env.REACT_APP_PATH || "";
 
 const instance = axios.create({
-  baseURL: staticServerUri || process.env.REACT_APP_API_URL,
+  baseURL: staticServerUri + "/api",
   timeout: 1000, // api에 문제가 생겼을 때 무한으로 기다리게 하면 사용자 경험이 낮아진다
   headers: {
     "Content-Type": "application/json",

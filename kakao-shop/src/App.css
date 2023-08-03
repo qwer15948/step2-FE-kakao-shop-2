@@ -1,0 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
+picture > img {
+  width: inherit;
+}
+
+button > svg {
+  margin: 0 auto;
+}

@@ -43,10 +43,10 @@ export default function Header() {
                   </NavLink>
                 </li>
                 <li>
-                  <Link to={staticServerUri + "/"}>브랜드데이</Link>
+                  <Link to={"/"}>브랜드데이</Link>
                 </li>
                 <li>
-                  <Link to={staticServerUri + "/"}>베스트</Link>
+                  <Link to={"/"}>베스트</Link>
                 </li>
               </ul>
             </nav>
@@ -63,14 +63,7 @@ export default function Header() {
             <div className="util flex gap-4 items-center">
               <IoSearchOutline size="27" />
               <LiaTruckSolid size="25" />
-              <Link
-                to={
-                  userEmail
-                    ? staticServerUri + "/cart"
-                    : staticServerUri + "/login"
-                }
-                className="relative"
-              >
+              <Link to={userEmail ? "/cart" : "/login"} className="relative">
                 {totalCounts > 0 && <CartBadge count={totalCounts} />}
                 <BsCart2 size="20" />
               </Link>
@@ -87,7 +80,7 @@ export default function Header() {
                   </button>
                 </div>
               ) : (
-                <Link to={staticServerUri + "/login"}>로그인</Link>
+                <Link to="/login">로그인</Link>
               )}
             </div>
           </div>

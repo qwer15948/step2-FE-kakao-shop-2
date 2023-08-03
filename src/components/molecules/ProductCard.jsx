@@ -9,11 +9,12 @@ import { GoShare, GoHeart } from "react-icons/go";
  * @param {object} product - 상품 정보 객체{ id, productName, price, image}
  */
 const ProductCard = ({ product }) => {
+  const staticServerUri = process.env.REACT_APP_PATH || "";
   return (
     <Card to={`/products/${product.id}`}>
       <div className="overflow-hidden rounded-md">
         <Photo
-          src={`http://kakao-app-env.eba-kfsgeb74.ap-northeast-2.elasticbeanstalk.com${product.image}`}
+          src={staticServerUri + `${product.image}`}
           alt={product.productName}
           className="transition duration-300 ease-in-out hover:scale-110"
         />

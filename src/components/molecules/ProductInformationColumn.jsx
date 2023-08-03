@@ -9,7 +9,7 @@ import { GoStar, GoStarFill } from "react-icons/go";
 
 const ProductInformationColumn = ({ product }) => {
   const { productName, price, image, starCount } = product;
-
+  const staticServerUri = process.env.REACT_APP_PATH || "";
   function StarRate() {
     const stars = [];
 
@@ -28,7 +28,7 @@ const ProductInformationColumn = ({ product }) => {
     <div className="product-information-column my-8 xl:flex sm:block md:w-1/2 lg:w-3/5">
       <div className="xl:w-1/2 sm:w-4/5">
         <Photo
-          src={`http://kakao-app-env.eba-kfsgeb74.ap-northeast-2.elasticbeanstalk.com${image}`}
+          src={staticServerUri + `${image}`}
           alt={productName}
           className="w-full h-auto"
         />

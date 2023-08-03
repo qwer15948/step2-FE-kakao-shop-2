@@ -13,7 +13,7 @@ const ProductCard = ({ product }) => {
     <Card to={`/products/${product.id}`}>
       <div className="overflow-hidden rounded-md">
         <Photo
-          src={`${process.env.REACT_APP_API_URL}${product.image}`}
+          src={`http://kakao-app-env.eba-kfsgeb74.ap-northeast-2.elasticbeanstalk.com${product.image}`}
           alt={product.productName}
           className="transition duration-300 ease-in-out hover:scale-110"
         />

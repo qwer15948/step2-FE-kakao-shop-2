@@ -8,13 +8,14 @@ import Link from "../components/atoms/Link";
  * @returns {JSX.Element} - 회원가입 페이지의 JSX 요소
  */
 const RegisterPage = () => {
+  const staticServerUri = process.env.REACT_APP_PATH || "";
   return (
     <div className="register-page">
       <div className="mt-32 mb-10">
         <Link to="/">
           <Photo
             className="w-32 mx-auto block"
-            src="/logoKakaoText.png"
+            src={staticServerUri + "/logoKakaoText.png"}
             alt="kakao-text-logo"
           />
         </Link>

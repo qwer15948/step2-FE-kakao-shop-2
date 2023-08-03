@@ -21,14 +21,14 @@ import useCartNum from "../../hooks/useCartNum";
  */
 export default function Header() {
   const { userEmail, totalCounts } = useCartNum();
-
+  const staticServerUri = process.env.REACT_APP_PATH || "";
   return (
     <header>
       <MainContainer className="fixed top-0 border border-solid border-t-0 border-x-0 border-gray-100 bg-white z-50 w-screen">
         <div className="innerhead flex justify-between items-center">
           <div className="innerhead-left flex gap-4 items-center h-14 pl-10">
             <Photo
-              src="/logoKakao.png"
+              src={staticServerUri + "/logoKakao.png"}
               alt="kakao-shopping"
               className="w-28 mr-12 h-fit"
             />
@@ -36,17 +36,17 @@ export default function Header() {
               <ul className="flex justify-between w-48">
                 <li>
                   <NavLink
-                    to="/"
+                    to={staticServerUri + "/"}
                     className="border-b-2 border-solid pb-1 font-bold"
                   >
                     홈
                   </NavLink>
                 </li>
                 <li>
-                  <Link to="/">브랜드데이</Link>
+                  <Link to={staticServerUri + "/"}>브랜드데이</Link>
                 </li>
                 <li>
-                  <Link to="/">베스트</Link>
+                  <Link to={staticServerUri + "/"}>베스트</Link>
                 </li>
               </ul>
             </nav>
@@ -63,7 +63,14 @@ export default function Header() {
             <div className="util flex gap-4 items-center">
               <IoSearchOutline size="27" />
               <LiaTruckSolid size="25" />
-              <Link to={userEmail ? "/cart" : "/login"} className="relative">
+              <Link
+                to={
+                  userEmail
+                    ? staticServerUri + "/cart"
+                    : staticServerUri + "/login"
+                }
+                className="relative"
+              >
                 {totalCounts > 0 && <CartBadge count={totalCounts} />}
                 <BsCart2 size="20" />
               </Link>
@@ -80,7 +87,7 @@ export default function Header() {
                   </button>
                 </div>
               ) : (
-                <Link to="/login">로그인</Link>
+                <Link to={staticServerUri + "/login"}>로그인</Link>
               )}
             </div>
           </div>

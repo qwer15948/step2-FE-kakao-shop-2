@@ -10,8 +10,9 @@ import { Link as RouterLink } from "react-router-dom";
  * @returns {JSX.Element} - 라우터 링크 컴포넌트의 JSX 요소
  */
 export default function Link({ to, children, className = "" }) {
+  const staticServerUri = process.env.REACT_APP_PATH || "";
   return (
-    <RouterLink to={to} className={className}>
+    <RouterLink to={staticServerUri + to} className={className}>
       {children}
     </RouterLink>
   );

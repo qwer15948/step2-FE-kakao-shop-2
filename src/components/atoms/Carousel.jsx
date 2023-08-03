@@ -14,12 +14,17 @@ const Carousel = ({ items }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+  const staticServerUri = process.env.REACT_APP_PATH || "";
   return (
     <Slider {...settings}>
       {items &&
         items.map((item) => (
           <div key={item.id}>
-            <Photo src={item.src} alt={item.alt} className="rounded-none" />
+            <Photo
+              src={staticServerUri + item.src}
+              alt={item.alt}
+              className="rounded-none"
+            />
           </div>
         ))}
     </Slider>
